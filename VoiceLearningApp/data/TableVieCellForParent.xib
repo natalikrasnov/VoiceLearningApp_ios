@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CellForParent" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellForParent" rowHeight="100" id="yWC-ck-E01" customClass="TableVieCellForParent" customModule="VoiceLearningApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yWC-ck-E01" id="qhl-ss-3jb">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNl-Kz-MKR" customClass="CornerdView" customModule="VoiceLearningApp" customModuleProvider="target">
+                        <rect key="frame" x="26" y="21" width="323" height="68"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cc-ta-vjP">
+                                <rect key="frame" x="10" y="39" width="303" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="a72-EP-1rW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ped-w8-Pct">
+                                <rect key="frame" x="10" y="10" width="303" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.5" id="Yiu-wp-PPy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2cc-ta-vjP" firstAttribute="centerY" secondItem="aNl-Kz-MKR" secondAttribute="centerY" constant="16.5" id="AbS-y1-HnX"/>
+                            <constraint firstItem="ped-w8-Pct" firstAttribute="leading" secondItem="aNl-Kz-MKR" secondAttribute="leading" constant="10" id="AlP-Zj-sUU"/>
+                            <constraint firstAttribute="trailing" secondItem="ped-w8-Pct" secondAttribute="trailing" constant="10" id="SCt-lZ-JBN"/>
+                            <constraint firstItem="2cc-ta-vjP" firstAttribute="leading" secondItem="aNl-Kz-MKR" secondAttribute="leading" constant="10" id="WZh-uX-HbD"/>
+                            <constraint firstAttribute="trailing" secondItem="2cc-ta-vjP" secondAttribute="trailing" constant="10" id="XXN-pm-PTb"/>
+                            <constraint firstItem="ped-w8-Pct" firstAttribute="top" secondItem="aNl-Kz-MKR" secondAttribute="top" constant="10" id="sdM-Ya-a5X"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aNl-Kz-MKR" firstAttribute="top" secondItem="qhl-ss-3jb" secondAttribute="topMargin" constant="10" id="1qc-LK-bSo"/>
+                    <constraint firstItem="aNl-Kz-MKR" firstAttribute="leading" secondItem="qhl-ss-3jb" secondAttribute="leadingMargin" constant="10" id="MrV-ec-DqA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="aNl-Kz-MKR" secondAttribute="bottom" id="SJe-8J-hSc"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="aNl-Kz-MKR" secondAttribute="trailing" constant="10" id="rds-ZD-avA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLAble" destination="ped-w8-Pct" id="cFo-ht-a9a"/>
+                <outlet property="eventLable" destination="2cc-ta-vjP" id="f1C-M1-Y6j"/>
+            </connections>
+            <point key="canvasLocation" x="-114.40000000000001" y="0.44977511244377816"/>
+        </tableViewCell>
+    </objects>
+</document>

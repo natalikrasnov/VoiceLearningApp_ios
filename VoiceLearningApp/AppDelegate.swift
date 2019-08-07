@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        var initialViewController:UIViewController? // = storyboard.instantiateViewController(withIdentifier: "LoginSignupVC")
+
+        if Auth.auth().currentUser != nil {
+            if Person.getIsKid() == 1{
+            //make kid game as start game
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+            }else if Person.getIsKid() == 2{
+            //make parent controler table as starter
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "ParentTableViewController")
+            }else{
+                initialViewController = storyboard.instantiateViewController(withIdentifier: "KidOrParentViewController")
+            }
+            Auth.auth().addStateDidChangeListener { (auth, user) in
+                print("add change state listener")
+            }
+        }else{
+           // make the chooser between parent and kid as starter
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "KidOrParentViewController")
+        }
+        window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
         return true
     }
 
